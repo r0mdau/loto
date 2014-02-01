@@ -7,9 +7,18 @@
     </head>
     <body>
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-8 col-md-offset-2">
-                    <h1>Loto game !</h1>                    
+            <div class="row">                 
+                <div class="col-xs-6 col-md-4">
+                    <h2>Faites vos jeux</h2>
+                    <div class="well" id="grille">
+                        
+                    </div>
+                    <div id="grilleDesChoix">
+                        
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <h1>Loto</h1>
                     <button id="lancer" class="btn btn-info">Jouer</button>
                     <h2>Les résultats :</h2>
                     <button id="res0" class="btn btn-success"></button>
@@ -22,11 +31,35 @@
             </div>
         </div>        
         <script src="js/jquery-1.11.0.min.js"></script>
-        <script src="js/lancerLoto.js"></script>
+        <script src="js/loto.js"></script>
+        <script src="js/grilleDeSelection.js"></script>
+        <script src="js/managerLesBoutons.js"></script>
+        <script src="js/faitesVosJeux.js"></script>
         <script>
-            $(document).ready(function(){
+            /* Variables globales définissant les styles des boutons */
+            var bouton = 'btn btn-default btn-xs';
+            var boutonActif = 'btn btn-default btn-xs active';
+            var boutonComplementaire = 'btn btn-danger btn-xs'
+            var boutonComplementaireActif = 'btn btn-danger btn-xs active'
+            /* fin */
+            
+            var grilles = [];               // contient chaque grille de numéros choisis
+            var nombresChoisis = 0;         // contient le nombre de numéros coché sur la grille de sélection
+            var numeroComplementaire = 0;   // contient la valeur du numéro complémentaire, 0 = numéro pas choisi            
+            var MONTANT = 10;               /* montant arbitraire des gains : pour chaque bon numéro, on multiplie
+                                             * la cagnotte (de 1€ au départ) par 10, si on a le numéro complémentaire,
+                                             * on multiplie la cagnotte par 90 */
+            
+            $(document).ready(function(){          
                 $('#lancer').click(function(){
                     lancerLoto();
+                });
+                
+                initialiserGrilleDeSelection();                
+                managerLesBoutons();
+                
+                $('#enregistrerChoix').click(function(){                    
+                    faitesVosJeux();
                 });
             });
         </script>

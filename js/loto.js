@@ -1,10 +1,12 @@
 function lancerLoto() {
+    $('.resultats').html('');
     var nombres = [];
     for(var i = 0 ; i < 5; i++){
         nombres[i] = leNumeroQuiSort(nombres);
     }
     nombres[5] = getRandomNombre(1, 11);
-    afficherResultats(nombres);                
+    afficherResultats(nombres);
+    afficherMontantsGagnes(nombres);
 }
 
 function afficherResultats(nombres) {
