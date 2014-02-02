@@ -8,7 +8,7 @@ function managerLesBoutons(){
             nombresChoisis++;
         }
         
-        if($(this).attr('class') == boutonComplementaire){
+        if(numeroComplementaire == 0 && $(this).attr('class') == boutonComplementaire){
             $(this).attr('class', boutonComplementaireActif);
             numeroComplementaire = parseInt($(this).text());
         }else if($(this).attr('class') == boutonComplementaireActif){
