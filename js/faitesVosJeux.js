@@ -39,16 +39,29 @@ function afficherMontantsGagnes(nombres){
     for(var i = 0; i < grilles.length; i++){
         var choix = grilles[i];   
         var cagnotte = 1;
+        var bonsNumeros = 0;
         for(var j = 0; j < choix.length - 1; j++){
             for(var k = 0; k < nombres.length - 1; k++){                            
                 if(choix[j] == nombres[k]){
-                    cagnotte *= MONTANT;
+                    bonsNumeros++;
                 }
             }
         }
         if(choix[choix.length - 1] == nombres[nombres.length - 1]){
-            cagnotte *= MONTANT * 9;
+            bonsNumeros++;
         }
-        $('#grille'+i).append(' <button type="button" class="btn btn-warning btn-xs">'+cagnotte+ " €</button>");
+        $('#grille'+i).append(' <button type="button" class="btn btn-warning btn-xs">'+calculerGains(bonsNumeros)+ " €</button>");
     }
+}
+
+function calculerGains(numeros){
+    var cagnotte = 0;
+    switch(numeros){
+        case 2: cagnotte = 6; break;
+        case 3: cagnotte = 11; break;
+        case 4: cagnotte = 1034; break;
+        case 5: cagnotte = 103156; break;
+        case 6: cagnotte = 2849969; break;
+    }
+    return cagnotte;
 }
