@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-xs-6 col-md-4">
                     <h1>Loto</h1>
-                    <button id="lancer" class="btn btn-info">Jouer</button>
+                    <button id="jouer" class="btn btn-info">Jouer</button>
                     <h2>Les résultats :</h2>
                     <button id="res0" class="btn btn-success"></button>
                     <button id="res1" class="btn btn-success"></button>
@@ -44,14 +44,14 @@
                                              * on multiplie la cagnotte par 90 */
             
             $(document).ready(function(){          
-                $('#lancer').click(function(){
+                $('#jouer').click(function(){
                     lancerLoto();
                 });
                 
                 initialiserGrilleDeSelection();                
                 managerLesBoutons();
                 
-                $('#enregistrerChoix').click(function(){                    
+                $('#enregistrerUneGrille').click(function(){                    
                     faitesVosJeux();
                 });
             });

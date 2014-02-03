@@ -7,5 +7,5 @@ function initialiserGrilleDeSelection(){
     for(var i = 1; i <= 10 ; i++){
         $('#grille').append('<button type="button" class="'+boutonComplementaire+'" id="numero'+i+'">'+i+'</button>');                                
     }
-    $('#grille').append('<br><br><button type="button" class="btn btn-default" id="enregistrerChoix">Ajouter</button>');
+    $('#grille').append('<br><br><button type="button" class="btn btn-default" id="enregistrerUneGrille">Ajouter</button>');
 }
