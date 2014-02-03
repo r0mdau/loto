@@ -4,7 +4,8 @@ function lancerLoto() {
     for(var i = 0 ; i < 5; i++){
         nombres[i] = leNumeroQuiSort(nombres);
     }
-    nombres[5] = getRandomNombre(1, 11);
+    nombres[5] = getRandomNombre(1, 10);
+    
     afficherResultats(nombres);
     afficherMontantsGagnes(nombres);
 }
@@ -16,7 +17,7 @@ function afficherResultats(nombres) {
 }
 
 function leNumeroQuiSort(nombres) {
-    var leNombre = getRandomNombre(1, 50);
+    var leNombre = getRandomNombre(1, 49);
     if (nombrePasEncoreSorti(nombres, leNombre)) {
         return leNombre;
     }else return leNumeroQuiSort(nombres);
@@ -35,8 +36,9 @@ function nombrePasEncoreSorti(nombres, leNombre){
 function getRandomNombre(min, max) {
     // la probailite que Math.random() retourne 1 et quasi nulle, donc pour 49 nombres possibles,
     // on met le maximum à 50
+    max++;
     var nombre = parseInt(Math.random() * max);
-    if (nombre < min) {
+    if (nombre < min || nombre >= max) {
         return getRandomNombre(min, max);
     }else return nombre;
 }
