@@ -1,3 +1,9 @@
+/* Variables globales définissant les styles des boutons */
+var bouton = 'btn btn-default btn-xs';
+var boutonActif = 'btn btn-info btn-xs active';
+var boutonComplementaire = 'btn btn-danger btn-xs'
+var boutonComplementaireActif = 'btn btn-success btn-xs active'
+
 function managerLesBoutons(){
     $('button').click(function(){
         if($(this).attr('class') == boutonActif){
