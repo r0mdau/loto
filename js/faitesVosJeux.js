@@ -5,7 +5,7 @@ function faitesVosJeux(){
     if(grilleComplete(choix)){
         $('#grilleDesChoix').append('<span class="well well-sm">'+afficherLaGrilleDeChoix(choix) + '<span class="resultats" id="grille'+grilles.length+'"></span></span><br><br>');
         grilles[grilles.length] = choix;
-        initButtons();
+        desactiverLesBoutons();
         nombresChoisis = 0;
         numeroComplementaire = 0;
     }else{

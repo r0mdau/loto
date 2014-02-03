@@ -18,7 +18,7 @@ function managerLesBoutons(){
     });
 }
 
-function initButtons(){
+function desactiverLesBoutons(){
     $('button').each(function(){
         if($(this).attr('class') == boutonActif){
             $(this).attr('class', bouton);
