@@ -39,12 +39,15 @@ function initialiserStats(){
 function caclulerReussite(stats, nombres){
     for(var i = 0; i < grilles.length; i++){                    
         var choix = grilles[i];
-        for(var j = 0; j < choix.length; j++){
-            for(var k = 0; k < nombres.length; k++){                            
+        for(var j = 0; j < choix.length - 1; j++){
+            for(var k = 0; k < nombres.length - 1; k++){                            
                 if(choix[j] == nombres[k]){
                     stats[i]++;
                 }
             }
+        }
+        if(choix[choix.length - 1] == nombres[nombres.length - 1]){
+            stats[i]++;
         }
     }
 }
