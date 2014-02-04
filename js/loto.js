@@ -10,6 +10,17 @@ function lancerLoto() {
     afficherMontantsGagnes(nombres);
 }
 
+function getLoto() {
+    $('.resultats').html('');
+    var nombres = [];
+    for(var i = 0 ; i < 5; i++){
+        nombres[i] = leNumeroQuiSort(nombres);
+    }
+    nombres[5] = getRandomNombre(1, 10);
+    afficherResultats(nombres);
+    return nombres;
+}
+
 function afficherResultats(nombres) {
     for(var i = 0; i < nombres.length; i++){
         $('#res'+i).html(nombres[i]);
