@@ -1,9 +1,11 @@
 function statistiques(){
     initialiserStats();
+    $('.resultats').html('');
     for(var i = 0; i < parseInt($('#nbStats').val()); i++){
         var nombres = getLoto();
         caclulerReussite(stats, nombres);                        
     }
+    afficherResultats(nombres);
     afficherResultatsStats();
 }
 

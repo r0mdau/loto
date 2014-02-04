@@ -1,23 +1,16 @@
 function lancerLoto() {
     $('.resultats').html('');
-    var nombres = [];
-    for(var i = 0 ; i < 5; i++){
-        nombres[i] = leNumeroQuiSort(nombres);
-    }
-    nombres[5] = getRandomNombre(1, 10);
-    
+    var nombres = getLoto();    
     afficherResultats(nombres);
     afficherMontantsGagnes(nombres);
 }
 
 function getLoto() {
-    $('.resultats').html('');
     var nombres = [];
     for(var i = 0 ; i < 5; i++){
         nombres[i] = leNumeroQuiSort(nombres);
     }
     nombres[5] = getRandomNombre(1, 10);
-    afficherResultats(nombres);
     return nombres;
 }
 
