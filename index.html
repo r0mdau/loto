@@ -62,7 +62,15 @@
                 });
                 
                 $('#statistiques').click(function(){
+                    var time = new Date();
+                    var debut = time.getTime();
+                    
                     statistiques();
+                    
+                    time = new Date();
+                    var fin = time.getTime();
+                    var resultat = fin - debut;
+                    console.log("Temps d'exécution : " + resultat + " ms");
                 });
             });
         </script>
